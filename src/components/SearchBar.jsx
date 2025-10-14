@@ -1,8 +1,25 @@
-function SearchBar() {
+import { useState } from "react";
+
+function SearchBar({ onSearch }) {
+    const [city, setCity] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (city.trim() === "") return; //ignore empty input
+        onSearch(city); // pass the city to parent
+        setCity(""); // clear input after search
+    };
+
     return (
-        <div>
-            <h1>Search Bar Component</h1>
-        </div>
+        <form onSubmit={handleSubmit}>
+            <input type="text"
+            placeholder="Enter city name" 
+            value={city}
+            onChange={(e)=> setCity(e.target.value)}
+            />
+            <button type="submit">Search</button>
+        </form>
+      
     );
 }
 
