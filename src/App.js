@@ -21,7 +21,7 @@ function App() {
     <div className="App">
       <h1>Weather Forecasting App</h1>
       <SearchBar onSearch={handleSearch} />
-      <WeatherDisplay data={weatherData} />
+      <WeatherDisplay weatherData={weatherData} />
       <Forecast city={searchCity} />
     </div>
   );
