@@ -1,6 +1,6 @@
 function Forecast({ forecastData }){
     if (!forecastData){
-        return <div>No frecast data to display.</div>
+        return <div>No forecast data to display.</div>
     }
     return(
         <div>
