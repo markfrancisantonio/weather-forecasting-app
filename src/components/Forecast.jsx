@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchForecast } from "../api/weatherAPI";
 
-function Forecast({ city }) {
+function Forecast({ city, unit }) {
     const [forecastData, setForecastData] = useState(null);
 
     useEffect(() => {
@@ -12,7 +12,7 @@ function Forecast({ city }) {
         };
 
         getForecast();
-    }, [city]);
+    }, [city, unit]);
 
     if (!city) return <div>Search for a city to see the forecast.</div>;
     if (!forecastData) return <div>Loading forecast...</div>;
@@ -26,7 +26,7 @@ function Forecast({ city }) {
                 {dailyForecasts.map((day, index) => (
                     <div key={index} className="forecast-item">
                         <p>{new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short" })}</p>
-                        <p>{Math.round(day.main.temp)}°C</p>
+                        <p>{Math.round(day.main.temp)}°{unit === "metric" ? "C" : "F"}</p>
                         <p>{day.weather[0].description}</p>
                     </div>
                 ))}

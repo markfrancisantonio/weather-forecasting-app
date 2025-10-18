@@ -11,7 +11,7 @@ function SearchBar({ onSearch }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="search-bar" onSubmit={handleSubmit}>
             <input type="text"
             placeholder="Enter city name" 
             value={city}
