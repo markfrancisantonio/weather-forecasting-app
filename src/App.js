@@ -4,6 +4,7 @@ import WeatherDisplay from "./components/WeatherDisplay";
 import Forecast from "./components/Forecast";
 import { fetchWeather } from "./api/weatherAPI";
 import "./App.css";
+import Button from "./components/Button";
 
 function App() {
   const [searchCity, setSearchCity] = useState("");
@@ -29,13 +30,13 @@ function App() {
     <div className="App">
       <h1>Weather Forecasting App</h1>
       <div className="controls">
-        <button
-          className="toggle-btn"
+        <SearchBar onSearch={handleSearch} />
+        <Button
+          className="custom-btn"
           onClick={() => setUnit(unit === "metric" ? "imperial" : "metric")}
         >
           Switch to {unit === "metric" ? "°F" : "°C"}
-        </button>
-        <SearchBar onSearch={handleSearch} />
+        </Button>
       </div>
       <WeatherDisplay weatherData={weatherData} unit={unit} />
       <Forecast city={searchCity} unit={unit} />
