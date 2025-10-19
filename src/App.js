@@ -28,12 +28,15 @@ function App() {
   return (
     <div className="App">
       <h1>Weather Forecasting App</h1>
-      <button
-        onClick={() => setUnit(unit === "metric" ? "imperial" : "metric")}
-      >
-        Switch to {unit === "metric" ? "°F" : "°C"}
-      </button>
-      <SearchBar onSearch={handleSearch} />
+      <div className="controls">
+        <button
+          className="toggle-btn"
+          onClick={() => setUnit(unit === "metric" ? "imperial" : "metric")}
+        >
+          Switch to {unit === "metric" ? "°F" : "°C"}
+        </button>
+        <SearchBar onSearch={handleSearch} />
+      </div>
       <WeatherDisplay weatherData={weatherData} unit={unit} />
       <Forecast city={searchCity} unit={unit} />
     </div>

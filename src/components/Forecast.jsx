@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchForecast } from "../api/weatherAPI";
+import Temperature from "./Temperature";
 
 function Forecast({ city, unit }) {
     const [forecastData, setForecastData] = useState(null);
@@ -26,7 +27,7 @@ function Forecast({ city, unit }) {
                 {dailyForecasts.map((day, index) => (
                     <div key={index} className="forecast-item">
                         <p>{new Date(day.dt_txt).toLocaleDateString("en-US", { weekday: "short" })}</p>
-                        <p>{Math.round(day.main.temp)}°{unit === "metric" ? "C" : "F"}</p>
+                        <p><Temperature value={day.main.temp} unit={unit}/></p>
                         <p>{day.weather[0].description}</p>
                     </div>
                 ))}
