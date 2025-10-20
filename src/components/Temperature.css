@@ -1,0 +1,9 @@
+.temperature {
+  font-weight: bold;
+  color: #1a73e8;
+}
+
+.temperature span {
+  font-size: 0.9rem;
+  color: #666;
+}

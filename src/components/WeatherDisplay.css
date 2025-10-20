@@ -1,0 +1,66 @@
+.weather-display {
+  background: linear-gradient(135deg, #f0f7ff, #e3f2fd);
+  border: 1px solid #bbdefb;
+  border-radius: 14px;
+  padding: 1.5rem 1rem;
+  margin: 2rem 0 1.5rem;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-display:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(33, 150, 243, 0.25);
+}
+
+.weather-display h2 {
+  color: #0d47a1;
+  margin-bottom: 0.8rem;
+}
+
+.weather-display p {
+  margin: 0.4rem 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.weather-display p:first-of-type span {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #1565c0;
+}
+
+.favorites-container {
+  background: #f9fafc;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+.favorites-container h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+}
+
+.favorite-cities-list {
+  display: block;        
+}
+
+.weather-actions {
+  margin-top: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  font-size: 0.95rem;
+}
+
+.weather-actions label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #333;
+}
+
